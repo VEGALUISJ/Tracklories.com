@@ -10,10 +10,10 @@ export class Create extends Component {
 
 	render() {
 		return (
-			<div className="containercreateuser text-center">
+			<div className="container containercreateuser text-center">
 				<div className="row">
 					<div className="col-sm-12">
-						<div className="word-container text-center border border-info rounded-pill">
+						<div className="word-container text-center">
 							<h1 className="text-white bg-dark">Create your account</h1>
 
 							<div className="register-container">
