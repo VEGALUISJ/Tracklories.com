@@ -52,7 +52,7 @@ export class Home extends React.Component {
 						Add Food item
 					</button>
 				</div>
-				<table className="table">
+				<table className="table col-sm-12">
 					<thead>
 						<tr className="table-active">
 							<th scope="col">Food Item</th>
@@ -69,7 +69,7 @@ export class Home extends React.Component {
 							<td>1350.45</td>
 						</tr>
 						<tr className="table-active">
-							<th scope="row">Total Calories to eat in this meal</th>
+							<th scope="row">Total Calories</th>
 							<td />
 							<td />
 							<td>1350.45</td>
