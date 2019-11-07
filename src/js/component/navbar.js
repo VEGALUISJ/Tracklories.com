@@ -2,17 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export class Navbar extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			clicked: false
-		};
-	}
-
-	show = () => {
-		this.setState({ clicked: !this.state.clicked });
-	};
-
 	render() {
 		return (
 			<nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -64,9 +53,8 @@ export class Navbar extends React.Component {
 										</a>
 									</Link>
 								</li>
-								<li className={" btn-group " + (this.state.clicked && "show")}>
+								<li className="btn-group">
 									<button
-										onClick={this.show}
 										type="button"
 										className="drop-button btn btn-secondary dropdown-toggle"
 										data-toggle="dropdown"
@@ -74,7 +62,7 @@ export class Navbar extends React.Component {
 										aria-expanded="false">
 										Log in
 									</button>
-									<div className={"dropdown-menu dropdown-menu " + (this.state.clicked && "show")}>
+									<div className="dropdown-menu dropdown-menu ">
 										<Link to="/log-in">
 											<a className="dropdown-item" href="#">
 												Log In
