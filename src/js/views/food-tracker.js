@@ -9,7 +9,7 @@ export class Tracker extends Component {
 					<div className="container">
 						<h1>Start tracking how much calories you eat is the first step to a healthy life!!!</h1>
 						<p className="lead">
-							Here you can track how many calorie you ete in previus days, and take control about your
+							Here you can track how many calories you ate in previus days, and take control about your
 							nutrition.
 						</p>
 					</div>
