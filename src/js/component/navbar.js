@@ -31,13 +31,6 @@ export class Navbar extends React.Component {
 									</Link>
 								</li>
 								<li className="nav-item">
-									<Link to="/informative">
-										<a className="nav-link" href="#">
-											Informative
-										</a>
-									</Link>
-								</li>
-								<li className="nav-item">
 									<Link to="/food-tracker">
 										<a className="nav-link" href="#">
 											Food Tracker

@@ -15,17 +15,17 @@ export class Tracker extends Component {
 					</div>
 				</div>
 				<div className="container">
-					<div className="col">
-						<div className="container1 col-2">test 1</div>
-						<div className="container2 col-8">test 2</div>
-						<div className="container3 col-2">test 3</div>
-					</div>
-					<div className="container">
-						<div className="row">
-							<div className="col">
+					<div className="row">
+						<div className="col">
+							<div className="">test 1</div>
+							<div className="">test 2</div>
+							<div className="">test 3</div>
+						</div>
+						<div className="col">
+							<div className="">
 								<p>insertar barra de progreso</p>
 							</div>
-							<div className="col">
+							<div className="d-flex">
 								<div>
 									<p>Insertar fecha</p>
 								</div>
