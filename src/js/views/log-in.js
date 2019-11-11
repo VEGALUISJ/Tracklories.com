@@ -5,7 +5,7 @@ export class Login extends Component {
 	render() {
 		return (
 			<div className="contanier-fluid containerlogin">
-				<div className="row">
+				<div className="row col-sm-10">
 					<div className="offset-md-4 col-md-4">
 						<h2>LOGIN</h2>
 

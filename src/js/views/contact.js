@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import perraImage from "/workspace/Tracklories-Proyect/src/js/images/1.jpg";
 
 export class Contact extends Component {
 	constructor() {
@@ -13,19 +12,10 @@ export class Contact extends Component {
 		return (
 			<div className="container-fluid mt-5">
 				<div className="card-deck d-flex justify-content-center">
-					<div className="col-xl-4">
+					<div className="col-xl-4 col-sm-8">
 						<div className="card d-flex">
 							<div className="card mt-3">
-								<img
-									className="card-img-top"
-									src={perraImage}
-									style={{
-										width: 350,
-										height: 350,
-										marginLeft: 29,
-										borderRadius: 350 / 1
-									}}
-								/>
+								<img className="card-img-top" src="https://icmi.or.id/assets/img/profile/profile.png" />
 								<div className="card-body">
 									<h5 className="card-title">Marcel Venegas</h5>
 									<p className="card-text">E-mail:</p>
