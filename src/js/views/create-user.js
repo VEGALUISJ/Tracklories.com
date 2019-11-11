@@ -36,6 +36,15 @@ export class Create extends Component {
 					<label htmlFor="exampleInputPassword1">Password</label>
 					<input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
 				</div>
+				<div className="form-group">
+					<label htmlFor="exampleInputPassword1">Confirm Password</label>
+					<input
+						type="password"
+						className="form-control"
+						id="exampleInputPassword1"
+						placeholder="Confirm Password"
+					/>
+				</div>
 			</div>
 		);
 	}

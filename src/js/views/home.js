@@ -1,7 +1,51 @@
 import React from "react";
 
 export class Home extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			chains: ["Choose one option", "Mcdonald", "KFC", "Burguer King", "Taco Bell", "Wendys"],
+			foods: [],
+			selected: "0",
+			addedItem: []
+		};
+	}
+
+	UNSAFE_componentWillMount() {
+		const item = [
+			{ name: "Hamburger", calories: "365" },
+			{ name: "Nachos", calories: "260" },
+			{ name: "Fries", calories: "120" },
+			{ name: "Coke", calories: "80" },
+			{ name: "Fried Chicken", calories: "245" }
+		];
+		item.unshift({ name: "Choose one option" });
+		this.setState({ ...this.state, foods: item });
+	}
+
+	selectedFood(e) {
+		this.setState({ ...this.state, selected: e.target.value });
+	}
+
+	saveFood(e) {
+		e.preventDefault();
+		if (e.target.value != "Choose one option") {
+			const selected = this.state.selected;
+			const itemSelected = this.state.foods.filter(food => {
+				if (selected === food.name) return food;
+			});
+			const newItem = this.state.addedItem;
+			if (this.state.addedItem.length > 0) {
+				newItem.push(itemSelected[0]);
+				this.setState({ ...this.state, addedItem: newItem });
+			} else {
+				this.setState({ ...this.state, addedItem: itemSelected });
+			}
+		}
+	}
+
 	render() {
+		console.log(this.state.addedItem);
 		return (
 			<div>
 				<div className="jumbotron jumbotron-home mx-auto">
@@ -29,26 +73,24 @@ export class Home extends React.Component {
 				<div className="form-group-home text-center mx-auto">
 					<label htmlFor="exampleSelect1">Choose one</label>
 					<select className="form-control" id="exampleSelect1">
-						<option />
-						<option>Mcdonalds</option>
-						<option>Burguer king</option>
-						<option>Taco Bell</option>
-						<option>KFC</option>
-						<option>Wendys</option>
+						{this.state.chains.map((chain, inx) => (
+							<option key={inx} value={inx}>
+								{chain}
+							</option>
+						))}
 					</select>
 					{/*lista desplegable de las cadenas de comida*/}
 				</div>
 				<div className="form-group-home2 text-center mx-auto mt-4 mb-4 row">
-					<select className="form-control col" id="exampleSelect1">
-						<option />
-						<option>Hamburguer</option>
-						<option>Nugget</option>
-						<option>Nachos</option>
-						<option>Fried Chicken</option>
-						<option>Fries</option>
+					<select className="form-control col" id="exampleSelect1" onChange={e => this.selectedFood(e)}>
+						{this.state.foods.map((food, inx) => (
+							<option key={inx} value={food.name}>
+								{food.name}
+							</option>
+						))}
 					</select>
 					{/*lista desplegable de los tipos de comida*/}
-					<button type="button col" className="btn btn-outline-success">
+					<button type="button col" className="btn btn-outline-success" onClick={e => this.saveFood(e)}>
 						Add Food item
 					</button>
 				</div>
@@ -62,18 +104,17 @@ export class Home extends React.Component {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<th scope="row">Hamburguer</th>
-							<td>2</td>
-							<td>675.22</td>
-							<td>1350.45</td>
-						</tr>
-						<tr className="table-active">
-							<th scope="row">Total Calories</th>
-							<td />
-							<td />
-							<td>1350.45</td>
-						</tr>
+						{this.state.addedItem.map((food, id) => (
+							<tr key={id}>
+								<td>{food.name}</td>
+
+								<td>1</td>
+
+								<td>{food.calories}</td>
+
+								<td>365</td>
+							</tr>
+						))}
 					</tbody>
 				</table>
 				{/*tabla para reflejar las comidas y las calorias*/}

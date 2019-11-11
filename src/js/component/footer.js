@@ -15,7 +15,7 @@ export const Footer = () => (
 		</p>
 		<div className="footer-copyright text-center py-3">
 			Copyright © 2019:
-			<a href="https://mdbootstrap.com/education/bootstrap/"> tracklories.com</a>
+			<a href="https://mdbootstrap.com/education/bootstrap/"> www.Tracklories.com</a>
 		</div>
 	</footer>
 );
