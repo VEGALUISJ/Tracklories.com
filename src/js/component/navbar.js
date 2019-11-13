@@ -5,7 +5,7 @@ import Logo from "../images/logo.png";
 export class Navbar extends React.Component {
 	render() {
 		return (
-			<nav className="navbar containernavbar navbar-expand-lg navbar-dark bg-dark">
+			<nav className="navbar containernavbar navbar-expand-lg navbar-dark text-dark bg-dark">
 				<div className="container w-80%">
 					<div className="mx-auto">
 						<div className="text-center">
