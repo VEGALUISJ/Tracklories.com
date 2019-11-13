@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "../images/logo.png";
 
 export class Navbar extends React.Component {
 	render() {
 		return (
-			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav className="navbar containernavbar navbar-expand-lg navbar-dark bg-dark">
 				<div className="container w-80%">
 					<div className="mx-auto">
 						<div className="text-center">
-							<h2 className="navbar-brand">Tracklories</h2>
+							<div className="navbar-brand mx-auto">
+								<img src={Logo} width="150" height="150" alt="logo" />
+							</div>
 						</div>
 						<button
 							className="navbar-toggler col"

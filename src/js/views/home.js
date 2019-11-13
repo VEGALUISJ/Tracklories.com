@@ -35,12 +35,9 @@ export class Home extends React.Component {
 				if (selected === food.name) return food;
 			});
 			const newItem = this.state.addedItem;
-			if (this.state.addedItem.length > 0) {
-				newItem.push(itemSelected[0]);
-				this.setState({ ...this.state, addedItem: newItem });
-			} else {
-				this.setState({ ...this.state, addedItem: itemSelected });
-			}
+
+			newItem.push({ ...itemSelected[0], quantity: 1, total: 360 });
+			this.setState({ ...this.state, addedItem: newItem });
 		}
 	}
 
@@ -108,11 +105,11 @@ export class Home extends React.Component {
 							<tr key={id}>
 								<td>{food.name}</td>
 
-								<td>1</td>
+								<td>{food.quantity}</td>
 
 								<td>{food.calories}</td>
 
-								<td>365</td>
+								<td>{food.total}</td>
 							</tr>
 						))}
 					</tbody>
