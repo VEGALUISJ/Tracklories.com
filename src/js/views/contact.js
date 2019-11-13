@@ -15,7 +15,11 @@ export class Contact extends Component {
 					<div className="col-xl-4 col-sm-8">
 						<div className="card d-flex">
 							<div className="card mt-3">
-								<img className="card-img-top" src="https://icmi.or.id/assets/img/profile/profile.png" />
+								<img
+									className="card-img-top"
+									src="https://icmi.or.id/assets/img/profile/profile.png"
+									alt="Coach image"
+								/>
 								<div className="card-body">
 									<h5 className="card-title">Marcel Venegas</h5>
 									<p className="card-text">E-mail:</p>
@@ -30,7 +34,7 @@ export class Contact extends Component {
 								<img
 									className="card-img-top"
 									src="https://icmi.or.id/assets/img/profile/profile.png"
-									alt="Card image cap"
+									alt="Coach image"
 								/>
 								<div className="card-body">
 									<h5 className="card-title">Jose Vega</h5>
@@ -46,7 +50,7 @@ export class Contact extends Component {
 								<img
 									className="card-img-top"
 									src="https://icmi.or.id/assets/img/profile/profile.png"
-									alt="Card image cap"
+									alt="Coach image"
 								/>
 								<div className="card-body">
 									<h5 className="card-title">Nizar Yarbouh</h5>
