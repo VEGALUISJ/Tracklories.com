@@ -5,7 +5,7 @@ import Logo from "../images/logo.png";
 export class Navbar extends React.Component {
 	render() {
 		return (
-			<nav className="navbar containernavbar navbar-expand-lg navbar-dark text-dark bg-dark">
+			<nav className="navbar containernavbar navbar-expand-lg navbar-dark bg-dark">
 				<div className="container w-80%">
 					<div className="mx-auto">
 						<div className="text-center">
@@ -27,7 +27,7 @@ export class Navbar extends React.Component {
 							<ul className="navbar-nav ml-auto">
 								<li className="nav-item active">
 									<Link to="/">
-										<a className="nav-link" href="#">
+										<a className="nav-link text-dark" href="#">
 											Home
 											<span className="sr-only">(current)</span>
 										</a>
@@ -35,14 +35,14 @@ export class Navbar extends React.Component {
 								</li>
 								<li className="nav-item">
 									<Link to="/food-tracker">
-										<a className="nav-link" href="#">
+										<a className="nav-link text-dark" href="#">
 											Food Tracker
 										</a>
 									</Link>
 								</li>
 								<li className="nav-item">
 									<Link to="/contact">
-										<a className="nav-link" href="#">
+										<a className="nav-link text-dark" href="#">
 											Contact
 										</a>
 									</Link>
@@ -50,7 +50,7 @@ export class Navbar extends React.Component {
 								<li className="btn-group">
 									<button
 										type="button"
-										className="drop-button btn btn-secondary dropdown-toggle"
+										className="drop-button btn btn-secondary dropdown-toggle text-dark"
 										data-toggle="dropdown"
 										aria-haspopup="true"
 										aria-expanded="false">
@@ -58,23 +58,23 @@ export class Navbar extends React.Component {
 									</button>
 									<div className="dropdown-menu dropdown-menu ">
 										<Link to="/log-in">
-											<a className="dropdown-item" href="#">
+											<a className="dropdown-item text-dark" href="#">
 												Log In
 											</a>
 										</Link>
 										<Link to="/create-user">
-											<a className="dropdown-item" href="#">
+											<a className="dropdown-item text-dark" href="#">
 												Sign In
 											</a>
 										</Link>
 										<Link to="/edit-info">
-											<a className="dropdown-item" href="#">
+											<a className="dropdown-item text-dark" href="#">
 												Edit Info
 											</a>
 										</Link>
 										<div className="dropdown-divider" />
 										<Link to="/">
-											<a className="dropdown-item" href="#">
+											<a className="dropdown-item text-dark" href="#">
 												Log Out
 											</a>
 										</Link>

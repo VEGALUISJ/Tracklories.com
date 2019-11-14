@@ -4,32 +4,17 @@ import { Context } from "../store/appContext";
 export class Home extends React.Component {
 	constructor() {
 		super();
-		this.state = {};
-	}
-
-	selectedFood(e) {
-		this.setStore({ ...this.store, selected: e.target.value });
-	}
-
-	addFood(e) {
-		e.preventDefault();
-		if (e.target.value != "Choose one option") {
-			const selected = this.state.selected;
-			const itemSelected = this.state.foods.filter(food => {
-				if (selected === food.name) return food;
-			});
-			const newItem = this.state.addedItem;
-
-			newItem.push({ ...itemSelected[0], quantity: 1, total: 360 });
-			this.setState({ ...this.state, addedItem: newItem });
-		}
+		this.state = {
+			food: ""
+		};
 	}
 
 	render() {
-		console.log(this.state.addedItem);
+		let tempfood = this.state.food;
+		console.log(tempfood);
 		return (
 			<Context.Consumer>
-				{({ store, actiopns }) => {
+				{({ store, actions }) => {
 					return (
 						<div>
 							<div className="jumbotron jumbotron-home mx-auto">
@@ -69,7 +54,9 @@ export class Home extends React.Component {
 								<select
 									className="form-control col"
 									id="exampleSelect1"
-									onChange={e => this.selectedFood(e)}>
+									onChange={e => {
+										this.setState({ food: e.target.value });
+									}}>
 									{store.dummy.map((food, inx) => (
 										<option key={inx} value={food.food_name}>
 											{food.food_name}
@@ -80,7 +67,9 @@ export class Home extends React.Component {
 								<button
 									type="button col"
 									className="btn btn-outline-success"
-									onClick={e => this.addFood(e)}>
+									onClick={() => {
+										actions.addedItem(tempfood);
+									}}>
 									Add Food item
 								</button>
 							</div>
@@ -94,9 +83,9 @@ export class Home extends React.Component {
 									</tr>
 								</thead>
 								<tbody>
-									{store.addedItem.map((food, id) => (
+									{store.foods.map((food, id) => (
 										<tr key={id}>
-											<td>{food.name}</td>
+											<td>{food}</td>
 
 											<td>{food.quantity}</td>
 
