@@ -66,7 +66,7 @@ export class Edit extends Component {
 							<label className="col-lg-3 col-form-label form-control-label" />
 							<div className="col-lg-9">
 								<input type="reset" className="btn btn-secondary" value="Cancel" />
-								<button type="button" className="btn btn-success disabled">
+								<button type="button" className="btn btn-success">
 									Save
 								</button>
 							</div>

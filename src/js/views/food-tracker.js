@@ -16,32 +16,80 @@ export class Tracker extends Component {
 				</div>
 				<div className="container">
 					<div className="row">
-						<div className="col">
-							<div className="">test 1</div>
-							<div className="">test 2</div>
-							<div className="">test 3</div>
+						<div className="col-3">
+							<div>
+								<p>Insertar fecha</p>
+							</div>
+							<div>
+								<p>Insertar fecha</p>
+							</div>
+							<div>
+								<p>Insertar fecha</p>
+							</div>
+							<div>
+								<p>Insertar fecha</p>
+							</div>
+							<div>
+								<p>Insertar fecha</p>
+							</div>
 						</div>
-						<div className="col">
-							<div className="">
-								<p>insertar barra de progreso</p>
+						<div className="col-9">
+							<div className="progress mb-4">
+								<div
+									className="progress-bar bg-info progressfood"
+									role="progressbar"
+									aria-valuenow="50"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								/>
 							</div>
-							<div className="d-flex">
-								<div>
-									<p>Insertar fecha</p>
-								</div>
-								<div>
-									<p>Insertar fecha</p>
-								</div>
-								<div>
-									<p>Insertar fecha</p>
-								</div>
-								<div>
-									<p>Insertar fecha</p>
-								</div>
-								<div>
-									<p>Insertar fecha</p>
-								</div>
+							<div className="progress mb-4">
+								<div
+									className="progress-bar bg-info progressfood"
+									role="progressbar"
+									aria-valuenow="100"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								/>
 							</div>
+							<div className="progress mb-4">
+								<div
+									className="progress-bar bg-info progressfood"
+									role="progressbar"
+									aria-valuenow="100"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								/>
+							</div>
+							<div className="progress mb-4">
+								<div
+									className="progress-bar bg-info progressfood"
+									role="progressbar"
+									aria-valuenow="100"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								/>
+							</div>
+							<div className="progress mb-4">
+								<div
+									className="progress-bar bg-info progressfood"
+									role="progressbar"
+									aria-valuenow="100"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-3">
+							<p>Calories Meter</p>
+						</div>
+						<div className="row col-9 text-right">
+							<div className="col-3 text-left">0</div>
+							<div className="col-3 text-right">2000</div>
+							<div className="col-3 text-right" />
+							<div className="col-3 text-right">4000</div>
 						</div>
 					</div>
 				</div>
