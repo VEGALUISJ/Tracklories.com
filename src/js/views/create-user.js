@@ -10,7 +10,7 @@ export class Create extends Component {
 
 	render() {
 		return (
-			<div className="container containercreateuser mt-4">
+			<div className="container containercreateuser mt-6 col-lg-6 col-8">
 				<h1 className="text-center">Sign Up</h1>
 				<div className="form-group">
 					<label htmlFor="exampleInputEmail1">Username</label>
@@ -19,7 +19,7 @@ export class Create extends Component {
 						className="form-control"
 						id="exampleInputusername1"
 						aria-describedby="usernameHelp"
-						placeholder="Enter Username"
+						placeholder="Create Username"
 					/>
 				</div>
 				<div className="form-group">
@@ -33,7 +33,7 @@ export class Create extends Component {
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="exampleInputPassword1">Password</label>
+					<label htmlFor="exampleInputPassword1">Create Password</label>
 					<input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
 				</div>
 				<div className="form-group">
@@ -45,6 +45,9 @@ export class Create extends Component {
 						placeholder="Confirm Password"
 					/>
 				</div>
+				<button type="button" className="btn btn-success mx-auto mb-4">
+					Success
+				</button>
 			</div>
 		);
 	}

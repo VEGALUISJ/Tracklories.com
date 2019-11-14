@@ -7,55 +7,60 @@ export class Edit extends Component {
 			<div className="container containereditinfo">
 				<div className="row my-2">
 					<div className="col-lg-8 order-lg-2">
-						<ul className="nav nav-tabs">
-							<li className="nav-item">
-								<a href="" data-target="#edit" data-toggle="tab" className="nav-link">
-									Edit
-								</a>
-							</li>
-						</ul>
-						<div className="col-lg-4 order-lg-1 text-center">
-							<img
-								src="//placehold.it/150"
-								className="mx-auto img-fluid img-circle d-block"
-								alt="avatar"
-							/>
-							<h6 className="mt-2">Upload a different photo</h6>
-							<label className="custom-file">
-								<input type="file" id="file" className="custom-file-input" />
-								<span className="custom-file-control">Choose file</span>
-							</label>
-						</div>
 						<div className="tab-content py-4">
 							<div className="tab-pane active" id="profile">
-								<h5 className="mb-3">User Profile</h5>
+								<h5 className="mb-3">Edit User Profile</h5>
 								<div className="row">
-									<div className="col-md-6">
+									<div className="col-md-6 mb-2">
 										<h6>About</h6>
-										<p>Web Designer, UI/UX Engineer</p>
+										<input
+											type="text"
+											className="form-control mb-3"
+											id="exampleInputusername1"
+											aria-describedby="aboutHelp"
+											placeholder="Exmaple: Web Designer, UI/UX Engineer"
+										/>
 										<h6>Hobbies</h6>
-										<p>Indie music, skiing and hiking. I love the great outdoors.</p>
+										<input
+											type="text"
+											className="form-control mb-3"
+											id="exampleInputusername1"
+											aria-describedby="aboutHelp"
+											placeholder="Exmaple: Indie music, skiing and hiking. I love the great outdoors."
+										/>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="form-group row">
-							<label className="col-lg-3 col-form-label form-control-label">Username</label>
-							<div className="col-lg-9">
-								<input className="form-control" type="text" value="" />
-							</div>
+						<div className="form-group">
+							<label htmlFor="exampleInputEmail1">Change Username</label>
+							<input
+								type="username"
+								className="form-control"
+								id="exampleInputusername1"
+								aria-describedby="usernameHelp"
+								placeholder="Edit Username"
+							/>
 						</div>
-						<div className="form-group row">
-							<label className="col-lg-3 col-form-label form-control-label">Password</label>
-							<div className="col-lg-9">
-								<input className="form-control" type="text" value="" />
-							</div>
+						<div className="form-group">
+							<label htmlFor="exampleInputEmail1">Change Password</label>
+							<input
+								type="username"
+								className="form-control"
+								id="exampleInputusername1"
+								aria-describedby="usernameHelp"
+								placeholder="Edit Password"
+							/>
 						</div>
-						<div className="form-group row">
-							<label className="col-lg-3 col-form-label form-control-label">Comfirm password</label>
-							<div className="col-lg-9">
-								<input className="form-control" type="password" value="" />
-							</div>
+						<div className="form-group">
+							<label htmlFor="exampleInputEmail1">Confirm New Password</label>
+							<input
+								type="username"
+								className="form-control"
+								id="exampleInputusername1"
+								aria-describedby="usernameHelp"
+								placeholder="Confirm Password"
+							/>
 						</div>
 						<div className="form-group row">
 							<label className="col-lg-3 col-form-label form-control-label" />
