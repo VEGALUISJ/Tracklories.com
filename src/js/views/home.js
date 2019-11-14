@@ -5,15 +5,13 @@ export class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			food: "",
-			chain: ""
+			meal: "",
+			chain: "",
+			food: ""
 		};
 	}
 
 	render() {
-		let tempchain = this.state.chain;
-		let tempfood = this.state.food;
-		console.log(tempchain);
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
@@ -63,11 +61,11 @@ export class Home extends React.Component {
 									className="form-control col"
 									id="exampleSelect1"
 									onChange={e => {
-										this.setState({ food: e.target.value });
+										this.setState({ meal: e.target.value });
 									}}>
-									{store.dummy.map((food, inx) => (
-										<option key={inx} value={food.food_name}>
-											{food.food_name}
+									{store.branded.map((meal, inx) => (
+										<option key={inx} value={meal.food_name}>
+											{meal.food_name}
 										</option>
 									))}
 								</select>
@@ -76,7 +74,7 @@ export class Home extends React.Component {
 									type="button col"
 									className="btn btn-outline-success"
 									onClick={() => {
-										actions.addedItem(tempfood);
+										actions.addedItem(this.state.meal);
 									}}>
 									Add Food item
 								</button>
@@ -91,15 +89,15 @@ export class Home extends React.Component {
 									</tr>
 								</thead>
 								<tbody>
-									{store.foods.map((food, id) => (
+									{store.foods.map((meal, id) => (
 										<tr key={id}>
-											<td>{food}</td>
+											<td>{meal.food_name}</td>
 
-											<td>{food.quantity}</td>
+											<td>1</td>
 
-											<td>{food.calories}</td>
+											<td>{meal.nf_calories}</td>
 
-											<td>{food.total}</td>
+											<td>500</td>
 										</tr>
 									))}
 								</tbody>
