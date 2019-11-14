@@ -5,13 +5,15 @@ export class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			food: ""
+			food: "",
+			chain: ""
 		};
 	}
 
 	render() {
+		let tempchain = this.state.chain;
 		let tempfood = this.state.food;
-		console.log(tempfood);
+		console.log(tempchain);
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
@@ -41,9 +43,15 @@ export class Home extends React.Component {
 							</div>
 							<div className="form-group-home text-center mx-auto">
 								<label htmlFor="exampleSelect1">Choose one</label>
-								<select className="form-control" id="exampleSelect1">
+								<select
+									className="form-control"
+									id="exampleSelect1"
+									onChange={e => {
+										actions.selectChain(e.target.value);
+										this.setState({ chain: e.target.value });
+									}}>
 									{store.chains.map((chain, inx) => (
-										<option key={inx} value={inx}>
+										<option key={inx} value={chain}>
 											{chain}
 										</option>
 									))}
