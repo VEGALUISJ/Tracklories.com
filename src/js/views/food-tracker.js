@@ -38,7 +38,7 @@ export class Tracker extends Component {
 								<div
 									className="progress-bar bg-info progressfood"
 									role="progressbar"
-									aria-valuenow="50"
+									aria-valuenow="0"
 									aria-valuemin="0"
 									aria-valuemax="100"
 								/>

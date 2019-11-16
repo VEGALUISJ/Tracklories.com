@@ -1,7 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			chains: ["Mcdonald", "KFC", "Burguer King", "Taco Bell", "Wendys"],
+			chains: ["Choose one option", "Mcdonald", "KFC", "Burguer King", "Taco Bell", "Wendys"],
 			selected: "",
 			foods: [],
 			branded: [],

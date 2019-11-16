@@ -43,6 +43,7 @@ export class Home extends React.Component {
 								<label htmlFor="exampleSelect1">Choose one</label>
 								<select
 									className="form-control"
+									value="Choose one option"
 									id="exampleSelect1"
 									onChange={e => {
 										actions.selectChain(e.target.value);
@@ -82,6 +83,7 @@ export class Home extends React.Component {
 							<table className="table col-sm-12">
 								<thead>
 									<tr className="table-active">
+										<th scope="col">Pic</th>
 										<th scope="col">Food Item</th>
 										<th scope="col">QTY</th>
 										<th scope="col">Calories</th>
@@ -91,11 +93,23 @@ export class Home extends React.Component {
 								<tbody>
 									{store.foods.map((meal, id) => (
 										<tr key={id}>
+											<td>
+												<img src={meal.photo.thumb} height="30" width="30" />
+											</td>
+
 											<td>{meal.food_name}</td>
 
-											<td>1</td>
+											<td>
+												<select className="form-control qtyhome" id="exampleSelect1">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+												</select>
+											</td>
 
-											<td>{meal.nf_calories}</td>
+											<td className="py-auto">{meal.nf_calories}</td>
 
 											<td>500</td>
 										</tr>
