@@ -100,18 +100,23 @@ export class Home extends React.Component {
 											<td>{meal.food_name}</td>
 
 											<td>
-												<select className="form-control qtyhome" id="exampleSelect1">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-												</select>
+												<input
+													type="number"
+													className="form-control qtyhome"
+													id="exampleSelect1"
+													value={meal.quantity}
+													onChange={e =>
+														actions.updateQuantity(
+															meal.food_name,
+															parseInt(e.target.value, 10)
+														)
+													}
+												/>
 											</td>
 
 											<td className="py-auto">{meal.nf_calories}</td>
 
-											<td>500</td>
+											<td>{meal.total}</td>
 										</tr>
 									))}
 								</tbody>

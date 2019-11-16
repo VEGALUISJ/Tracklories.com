@@ -13,7 +13,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addedItem: meal => {
 				let store = getStore();
 				let obj = store.branded.filter(e => e.food_name == meal);
+				obj.quantity = 1;
 				setStore({ foods: store.foods.concat(obj) });
+			},
+			updateQuantity: (meal, qty) => {
+				let store = getStore();
+				setStore({
+					foods: store.foods.map(b => {
+						if (b.food_name === meal)
+							return { ...b, quantity: qty, total: b.nf_calories * b.serving_qty * qty };
+						return b;
+					})
+				});
 			},
 			selectChain: chain => {
 				const store = getStore();
@@ -28,7 +39,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 
 					.then(data => {
-						setStore({ branded: data.branded });
+						setStore({
+							branded: data.branded.map(b => {
+								return { ...b, quantity: 1, total: b.nf_calories * b.serving_qty };
+							})
+						});
 						setStore({ common: data.common });
 					});
 			}
