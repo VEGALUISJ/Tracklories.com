@@ -1,3 +1,5 @@
+import moment from "moment";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -16,12 +18,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				obj.quantity = 1;
 				setStore({ foods: store.foods.concat(obj) });
 			},
-			updateQuantity: (meal, qty) => {
+			updateItem: (meal, updaetData) => {
 				let store = getStore();
 				setStore({
 					foods: store.foods.map(b => {
 						if (b.food_name === meal)
-							return { ...b, quantity: qty, total: b.nf_calories * b.serving_qty * qty };
+							return {
+								...b,
+								quantity: updaetData.qty,
+								total: b.nf_calories * b.serving_qty * updaetData.qty,
+								date: updaetData.date
+							};
 						return b;
 					})
 				});
@@ -41,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						setStore({
 							branded: data.branded.map(b => {
-								return { ...b, quantity: 1, total: b.nf_calories * b.serving_qty };
+								return { ...b, quantity: 1, total: b.nf_calories * b.serving_qty, date: moment() };
 							})
 						});
 						setStore({ common: data.common });

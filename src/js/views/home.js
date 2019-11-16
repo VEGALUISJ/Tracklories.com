@@ -1,5 +1,7 @@
 import React from "react";
 import { Context } from "../store/appContext";
+import moment from "moment";
+import Datetime from "react-datetime";
 
 export class Home extends React.Component {
 	constructor() {
@@ -80,7 +82,7 @@ export class Home extends React.Component {
 									Add Food item
 								</button>
 							</div>
-							<table className="table col-sm-12">
+							<table className="supertable col-sm-12">
 								<thead>
 									<tr className="table-active">
 										<th scope="col">Pic</th>
@@ -98,6 +100,18 @@ export class Home extends React.Component {
 											</td>
 
 											<td>{meal.food_name}</td>
+											<td>
+												<Datetime
+													dateFormat={"MM/DD/YYYY"}
+													onChange={newDate => {
+														actions.updateItem(meal.food_name, {
+															qty: meal.qty,
+															date: newDate
+														});
+													}}
+													value={meal.date}
+												/>
+											</td>
 
 											<td>
 												<input
@@ -106,10 +120,10 @@ export class Home extends React.Component {
 													id="exampleSelect1"
 													value={meal.quantity}
 													onChange={e =>
-														actions.updateQuantity(
-															meal.food_name,
-															parseInt(e.target.value, 10)
-														)
+														actions.updateItem(meal.food_name, {
+															qty: parseInt(e.target.value, 10),
+															date: meal.date
+														})
 													}
 												/>
 											</td>
