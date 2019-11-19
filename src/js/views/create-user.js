@@ -52,7 +52,7 @@ export class Create extends Component {
 						/>
 					</div>
 					<button type="button" className="btn btn-success mx-auto mb-4">
-						Success
+						Create user
 					</button>
 				</div>
 			</div>
