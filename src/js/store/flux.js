@@ -8,30 +8,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 			foods: [],
 			branded: [],
 			common: [],
-			calories: []
+			calories: [],
+			mealInformation: [],
+			date: ""
 		},
 
 		actions: {
+			saveFoods: (date, calories) => {
+				let store = getStore();
+				store.mealInformation.concat([
+					{
+						time: date,
+						totalCalories: calories
+					}
+				]);
+
+				console.log(store.mealInformation);
+			},
 			addedItem: meal => {
 				let store = getStore();
 				let obj = store.branded.filter(e => e.food_name == meal);
 				obj.quantity = 1;
 				setStore({ foods: store.foods.concat(obj) });
 			},
-			updateItem: (meal, updaetData) => {
+			updateItem: (meal, updateData) => {
 				let store = getStore();
+				console.log(updateData.date);
+				console.log(meal);
 				setStore({
 					foods: store.foods.map(b => {
 						if (b.food_name === meal)
 							return {
 								...b,
-								quantity: updaetData.qty,
-								total: b.nf_calories * b.serving_qty * updaetData.qty,
-								date: updaetData.date
+								quantity: updateData.qty,
+								total: b.nf_calories * b.serving_qty * updateData.qty,
+								date: updateData.date
 							};
+
 						return b;
 					})
 				});
+				console.log(store.foods);
 			},
 			selectChain: chain => {
 				const store = getStore();

@@ -9,7 +9,8 @@ export class Home extends React.Component {
 		this.state = {
 			meal: "",
 			chain: "",
-			food: ""
+			food: "",
+			date: ""
 		};
 	}
 
@@ -87,7 +88,8 @@ export class Home extends React.Component {
 									<tr className="table-active">
 										<th scope="col">Pic</th>
 										<th scope="col">Food Item</th>
-										<th scope="col">QTY</th>
+										<th scope="col">time</th>
+										<th scope="col">qty</th>
 										<th scope="col">Calories</th>
 										<th scope="col">Total</th>
 									</tr>
@@ -102,11 +104,11 @@ export class Home extends React.Component {
 											<td>{meal.food_name}</td>
 											<td>
 												<Datetime
-													dateFormat={"MM/DD/YYYY"}
+													dateFormat={"MM-DD-YYYY"}
 													onChange={newDate => {
 														actions.updateItem(meal.food_name, {
-															qty: meal.qty,
-															date: newDate
+															quantity: meal.quantity,
+															date: newDate._d
 														});
 													}}
 													value={meal.date}
@@ -147,9 +149,14 @@ export class Home extends React.Component {
 							</div>
 							{/*Boton de guardar meal*/}
 							<div className="alert alert-dismissible alert-warning">
-								<button type="button" className="close" data-dismiss="alert">
-									&times;
-								</button>
+								<button
+									type="button"
+									onClick={() => {
+										actions.saveFoods(1, 2);
+									}}
+									className="close"
+									data-dismiss="alert"
+								/>
 								<h4 className="alert-heading">Warning!</h4>
 								<p className="mb-0">
 									Join now to save your meal in your tracker profile up 5 days,
