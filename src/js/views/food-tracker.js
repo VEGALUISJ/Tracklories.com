@@ -33,68 +33,14 @@ export class Tracker extends React.Component {
 							</div>
 							<div className="container">
 								<div className="row">
-									<div className="col-3">
+									<div className="col-5">
+										<h2>Date</h2>
 										{store.foods.map((meal, index) => {
 											return <p key={index}>{meal.date.toString()}</p>;
 										})}
 									</div>
-									<div className="col-9">
-										<div className="progress mb-4">
-											<div
-												className="progress-bar bg-info progressfood"
-												role="progressbar"
-												aria-valuenow="0"
-												aria-valuemin="0"
-												aria-valuemax="100"
-											/>
-										</div>
-										<div className="progress mb-4">
-											<div
-												className="progress-bar bg-info progressfood"
-												role="progressbar"
-												aria-valuenow="100"
-												aria-valuemin="0"
-												aria-valuemax="100"
-											/>
-										</div>
-										<div className="progress mb-4">
-											<div
-												className="progress-bar bg-info progressfood"
-												role="progressbar"
-												aria-valuenow="100"
-												aria-valuemin="0"
-												aria-valuemax="100"
-											/>
-										</div>
-										<div className="progress mb-4">
-											<div
-												className="progress-bar bg-info progressfood"
-												role="progressbar"
-												aria-valuenow="100"
-												aria-valuemin="0"
-												aria-valuemax="100"
-											/>
-										</div>
-										<div className="progress mb-4">
-											<div
-												className="progress-bar bg-info progressfood"
-												role="progressbar"
-												aria-valuenow="100"
-												aria-valuemin="0"
-												aria-valuemax="100"
-											/>
-										</div>
-									</div>
-								</div>
-								<div className="row">
-									<div className="col-3">
-										<p>Calories Meter</p>
-									</div>
-									<div className="row col-9 text-right">
-										<div className="col-3 text-left">0</div>
-										<div className="col-3 text-right">2000</div>
-										<div className="col-3 text-right" />
-										<div className="col-3 text-right">4000</div>
+									<div className="col-5">
+										<h2>Calories</h2>
 									</div>
 								</div>
 							</div>

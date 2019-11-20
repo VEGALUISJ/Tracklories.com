@@ -14,6 +14,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 
 		actions: {
+			logout: () => {
+				// setStore({ token: null });
+				console.log("logout");
+			},
+			login: (user, pw) => {
+				fetch("https://3000-b4ae0d41-3f68-42ac-9c58-db8fc26a5c11.ws-us02.gitpod.io/login", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						username: user,
+						password: pw
+					})
+				})
+					.then(response => response.json())
+					.then(token => {
+						if (typeof token.msg != "undefined") {
+							// Notify.error(token.msg);
+						} else {
+							setStore({ token: token.jwt, currentUser: token.bubu });
+							// history.push("/dashboard");
+						}
+					});
+			},
+
 			saveFoods: (date, calories) => {
 				let store = getStore();
 				store.mealInformation.concat([
@@ -22,8 +46,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 						totalCalories: calories
 					}
 				]);
-
-				console.log(store.mealInformation);
 			},
 			addedItem: meal => {
 				let store = getStore();
