@@ -10,7 +10,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			common: [],
 			calories: [],
 			mealInformation: [],
-			date: ""
+			date: "",
+			foodtrackerCalories: []
 		},
 
 		actions: {

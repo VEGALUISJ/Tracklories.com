@@ -46,7 +46,6 @@ export class Home extends React.Component {
 								<label htmlFor="exampleSelect1">Choose one</label>
 								<select
 									className="form-control"
-									value="Choose one option"
 									id="exampleSelect1"
 									onChange={e => {
 										actions.selectChain(e.target.value);

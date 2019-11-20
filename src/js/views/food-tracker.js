@@ -33,16 +33,22 @@ export class Tracker extends React.Component {
 							</div>
 							<div className="container">
 								<div className="row">
-									<div className="col-5">
+									<div className="col-4">
 										<h2>Date</h2>
 										{store.foods.map((meal, index) => {
 											return <p key={index}>{meal.date.toString()}</p>;
 										})}
 									</div>
-									<div className="col-5">
+									<div className="col-4">
+										<h2>Food</h2>
+										{store.foods.map((meal, index) => {
+											return <p key={index}>{meal.food_name}</p>;
+										})}
+									</div>
+									<div className="col-4">
 										<h2>Calories</h2>
 										{store.foods.map((meal, index) => {
-											return <p key={index}>{meal.date.toString()}</p>;
+											return <p key={index}>{meal.total}</p>;
 										})}
 									</div>
 								</div>
