@@ -130,7 +130,7 @@ export class Home extends React.Component {
 												/>
 											</td>
 
-											<td className="py-auto">{meal.nf_calories}</td>
+											<td className="py-auto">{parseInt(meal.nf_calories)}</td>
 
 											<td>{parseInt(meal.total)}</td>
 										</tr>
