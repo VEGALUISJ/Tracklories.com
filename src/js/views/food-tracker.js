@@ -41,6 +41,9 @@ export class Tracker extends React.Component {
 									</div>
 									<div className="col-5">
 										<h2>Calories</h2>
+										{store.foods.map((meal, index) => {
+											return <p key={index}>{meal.date.toString()}</p>;
+										})}
 									</div>
 								</div>
 							</div>

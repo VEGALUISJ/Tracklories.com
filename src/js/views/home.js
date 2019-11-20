@@ -132,7 +132,7 @@ export class Home extends React.Component {
 
 											<td className="py-auto">{meal.nf_calories}</td>
 
-											<td>{meal.total}</td>
+											<td>{parseInt(meal.total)}</td>
 										</tr>
 									))}
 								</tbody>
@@ -141,7 +141,12 @@ export class Home extends React.Component {
 							<div className="container-fluid mt-3 mb-3">
 								<div className="row w-100 align-items-center">
 									<div className="col text-center">
-										<button type="button" className="btn btn-success">
+										<button
+											type="button"
+											className="btn btn-success"
+											onClick={() => {
+												actions.saveFoods(1, 2);
+											}}>
 											Save Meal
 										</button>
 									</div>
@@ -149,14 +154,7 @@ export class Home extends React.Component {
 							</div>
 							{/*Boton de guardar meal*/}
 							<div className="alert alert-dismissible alert-warning">
-								<button
-									type="button"
-									onClick={() => {
-										actions.saveFoods(1, 2);
-									}}
-									className="close"
-									data-dismiss="alert"
-								/>
+								<button type="button" className="close" data-dismiss="alert" />
 								<h4 className="alert-heading">Warning!</h4>
 								<p className="mb-0">
 									Join now to save your meal in your tracker profile up 5 days,

@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 
 export class Login extends Component {
-	state = {};
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: null,
+			pw: null
+		};
+	}
 	render() {
 		return (
 			<div className="contanier-fluid containerlogin">
