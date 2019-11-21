@@ -11,12 +11,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			calories: [],
 			mealInformation: [],
 			date: "",
-			foodtrackerCalories: []
+			foodtrackerCalories: [],
+			token: null,
+			currentUser: null
 		},
 
 		actions: {
 			logout: () => {
-				// setStore({ token: null });
+				//setStore({ token: null });
 				console.log("logout");
 			},
 			login: (user, pw) => {
