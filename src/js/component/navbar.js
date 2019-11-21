@@ -69,7 +69,8 @@ export class Navbar extends React.Component {
 														className="btn btn-primary dropdown-toggle"
 														data-toggle="dropdown"
 														aria-haspopup="true"
-														aria-expanded="false"></button>
+														aria-expanded="false"
+													/>
 													<div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
 														<Link to="/create-user">
 															<a className="dropdown-item text-dark" href="#">
