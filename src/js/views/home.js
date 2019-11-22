@@ -1,5 +1,6 @@
 import React from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 import moment from "moment";
 import Datetime from "react-datetime";
 
@@ -146,7 +147,7 @@ export class Home extends React.Component {
 											onClick={() => {
 												actions.saveFoods(1, 2);
 											}}>
-											Save Meal
+											<Link to="/food-tracker">Save meal</Link>
 										</button>
 									</div>
 								</div>
