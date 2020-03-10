@@ -16,9 +16,12 @@ export class Home extends React.Component {
 	}
 
 	render() {
+		console.log(this.state.meal);
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
+					let testArray = store.chains.concat(store.test);
+					console.log("test", testArray);
 					return (
 						<div>
 							<div className="jumbotron jumbotron-home mx-auto">
@@ -52,7 +55,7 @@ export class Home extends React.Component {
 										actions.selectChain(e.target.value);
 										this.setState({ chain: e.target.value });
 									}}>
-									{store.chains.map((chain, inx) => (
+									{testArray.map((chain, inx) => (
 										<option key={inx} value={chain}>
 											{chain}
 										</option>
@@ -82,6 +85,11 @@ export class Home extends React.Component {
 									}}>
 									Add Food item
 								</button>
+							</div>
+							<div>
+								<h3 className="text-center">Or if you are not eating a chain food,</h3>
+								<hr className="my-4" />
+								<h3 className="text-center mb-5">Add your own customized food/calories:</h3>
 							</div>
 							<table className="supertable col-sm-12">
 								<thead>

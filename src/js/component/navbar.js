@@ -55,13 +55,23 @@ export class Navbar extends React.Component {
 												className="btn-group"
 												role="group"
 												aria-label="Button group with nested dropdown">
-												<button type="button" className="btn btn-primary">
-													<Link to="/log-in">
-														<a className="dropdown-item text-light" href="#">
-															Log In
-														</a>
-													</Link>
-												</button>
+												{store.token != null ? (
+													<button type="button" className="btn btn-primary">
+														<Link to="/log-in">
+															<a className="dropdown-item text-light" href="#">
+																Log Out
+															</a>
+														</Link>
+													</button>
+												) : (
+													<button type="button" className="btn btn-primary">
+														<Link to="/log-in">
+															<a className="dropdown-item text-light" href="#">
+																Log In
+															</a>
+														</Link>
+													</button>
+												)}
 												<div className="btn-group" role="group">
 													<button
 														id="btnGroupDrop1"
@@ -72,22 +82,16 @@ export class Navbar extends React.Component {
 														aria-expanded="false"
 													/>
 													<div className="dropdown-menu" aria-labelledby="btnGroupDrop1">
-														<Link to="/create-user">
-															<a className="dropdown-item text-dark" href="#">
-																Sign In
-															</a>
-														</Link>
+														{store.token != null ? null : (
+															<Link to="/create-user">
+																<a className="dropdown-item text-dark" href="#">
+																	Sign In
+																</a>
+															</Link>
+														)}
 														<Link to="/edit-info">
 															<a className="dropdown-item text-dark" href="#">
 																Edit Info
-															</a>
-														</Link>
-														<Link to="/">
-															<a
-																className="dropdown-item text-dark"
-																href="#"
-																onClick={actions.logout()}>
-																Log Out
 															</a>
 														</Link>
 													</div>

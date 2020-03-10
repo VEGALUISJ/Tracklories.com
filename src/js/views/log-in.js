@@ -7,7 +7,7 @@ export class Login extends Component {
 		super(props);
 		this.state = {
 			username: null,
-			pw: null
+			password: null
 		};
 	}
 	render() {
@@ -23,17 +23,25 @@ export class Login extends Component {
 									<form action="">
 										<div className="form-group">
 											<label htmlFor="">Username</label>
-											<input type="text" className="form-control" />
+											<input
+												onChange={e => this.setState({ username: e.target.value })}
+												type="text"
+												className="form-control"
+											/>
 										</div>
 
 										<div className="form-group">
 											<label htmlFor="">Password</label>
-											<input type="password" className="form-control" />
+											<input
+												onChange={e => this.setState({ password: e.target.value })}
+												type="password"
+												className="form-control"
+											/>
 										</div>
 										<button
 											type="button"
 											className="btn btn-outline-primary"
-											onClick={() => actions.login(this.state.username, this.state.pw)}>
+											onClick={() => actions.login(this.state.username, this.state.password)}>
 											Login
 										</button>
 									</form>

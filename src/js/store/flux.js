@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			chains: ["Choose one option", "Mcdonald", "KFC", "Burguer King", "Taco Bell", "Wendys"],
+			test: ["Add New Item"],
 			selected: "",
 			foods: [],
 			branded: [],
@@ -17,12 +18,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 
 		actions: {
+			register: (username, email, password) => {
+				fetch("https://3000-fb7489c6-be13-4c7b-9b8e-4f0d6667d31e.ws-us02.gitpod.io/adduser", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({
+						username: username,
+						password: password,
+						email: email
+					})
+				});
+			},
 			logout: () => {
 				//setStore({ token: null });
 				console.log("logout");
 			},
 			login: (user, pw) => {
-				fetch("https://3000-b4ae0d41-3f68-42ac-9c58-db8fc26a5c11.ws-us02.gitpod.io/login", {
+				fetch("https://3000-fb7489c6-be13-4c7b-9b8e-4f0d6667d31e.ws-us02.gitpod.io/login", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
@@ -35,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						if (typeof token.msg != "undefined") {
 							// Notify.error(token.msg);
 						} else {
-							setStore({ token: token.jwt, currentUser: token.bubu });
+							setStore({ token: token.jwt, currentUser: token.id });
 							// history.push("/dashboard");
 						}
 					});
