@@ -1,8 +1,10 @@
 import React from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import "../../styles/index.scss";
 import moment from "moment";
 import Datetime from "react-datetime";
+import { Button } from "react-bootstrap";
 
 export class Home extends React.Component {
 	constructor() {
@@ -79,7 +81,7 @@ export class Home extends React.Component {
 								{/*lista desplegable de los tipos de comida*/}
 								<button
 									type="button col"
-									className="btn btn-outline-success"
+									className="btn btn-outline-success ml-2"
 									onClick={() => {
 										actions.addedItem(this.state.meal);
 									}}>
@@ -90,6 +92,29 @@ export class Home extends React.Component {
 								<h3 className="text-center">Or if you are not eating a chain food,</h3>
 								<hr className="my-4" />
 								<h3 className="text-center mb-5">Add your own customized food/calories:</h3>
+							</div>
+							<div className="NewArea text-center d-flex justify-content-center mb-3">
+								<label className="ml-2 col-form-label" htmlFor="inputDefault">
+									Insert Food Name
+								</label>
+								<input
+									type="text"
+									className="input form-control ml-2 mr-2"
+									placeholder="Food Name"
+									id="inputDefault"
+								/>
+								<label className="ml-2 mr-2 col-form-label" htmlFor="inputDefault">
+									Insert # Food Calories
+								</label>
+								<input
+									type="number"
+									className="input form-control mr-3"
+									placeholder="Food Calories"
+									id="inputDefault"
+								/>
+								<button type="button" className="btn btn-outline-success">
+									Add New Item
+								</button>
 							</div>
 							<table className="supertable col-sm-12">
 								<thead>
