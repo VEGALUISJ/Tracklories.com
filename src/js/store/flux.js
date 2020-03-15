@@ -66,7 +66,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let store = getStore();
 				let obj = store.branded.filter(e => e.food_name == meal);
 				obj.quantity = 1;
+				console.log(obj);
 				setStore({ foods: store.foods.concat(obj) });
+				console.log(store);
+			},
+			addNewItem: (meal, calorie) => {
+				let store = getStore();
+				let obj = {
+					food_name: meal,
+					nf_calories: calorie,
+					quantity: 1,
+					total: calorie,
+					date: new Date()
+				};
+				setStore({ foods: [...store.foods, obj] });
+				console.log(store);
 			},
 			updateItem: (meal, updateData) => {
 				let store = getStore();

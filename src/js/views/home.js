@@ -13,17 +13,16 @@ export class Home extends React.Component {
 			meal: "",
 			chain: "",
 			food: "",
-			date: ""
+			date: "",
+			calorie: ""
 		};
 	}
 
 	render() {
-		console.log(this.state.meal);
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
 					let testArray = store.chains.concat(store.test);
-					console.log("test", testArray);
 					return (
 						<div>
 							<div className="jumbotron jumbotron-home mx-auto">
@@ -102,6 +101,7 @@ export class Home extends React.Component {
 									className="input form-control ml-2 mr-2"
 									placeholder="Food Name"
 									id="inputDefault"
+									onChange={e => this.setState({ ...this.state, meal: e.target.value })}
 								/>
 								<label className="ml-2 mr-2 col-form-label" htmlFor="inputDefault">
 									Insert # Food Calories
@@ -111,8 +111,14 @@ export class Home extends React.Component {
 									className="input form-control mr-3"
 									placeholder="Food Calories"
 									id="inputDefault"
+									onChange={e => this.setState({ ...this.state, calorie: e.target.value })}
 								/>
-								<button type="button" className="btn btn-outline-success">
+								<button
+									type="button"
+									className="btn btn-outline-success"
+									onClick={() => {
+										actions.addNewItem(this.state.meal, this.state.calorie);
+									}}>
 									Add New Item
 								</button>
 							</div>
@@ -131,7 +137,9 @@ export class Home extends React.Component {
 									{store.foods.map((meal, id) => (
 										<tr key={id}>
 											<td>
-												<img src={meal.photo.thumb} height="30" width="30" />
+												{meal.photo ? (
+													<img src={meal.photo.thumb} height="30" width="30" />
+												) : null}
 											</td>
 
 											<td>{meal.food_name}</td>
