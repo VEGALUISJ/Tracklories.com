@@ -76,18 +76,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 					food_name: meal,
 					nf_calories: calorie,
 					quantity: 1,
+					serving_qty: 1,
 					total: calorie,
 					date: new Date()
 				};
 				setStore({ foods: [...store.foods, obj] });
-				console.log(store);
 			},
 			updateItem: (meal, updateData) => {
 				let store = getStore();
-				console.log(updateData.date);
-				console.log(meal);
+				console.log("estoy en flux" + "" + JSON.stringify(updateData, null, 2));
 				setStore({
 					foods: store.foods.map(b => {
+						console.log(b.nf_calories);
+						console.log(b.serving_qty);
+						console.log(updateData.qty);
 						if (b.food_name === meal)
 							return {
 								...b,

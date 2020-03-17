@@ -23,16 +23,16 @@ export const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter>
 				<ScrollToTop>
-					<Navbar /> {/** Jose */}
+					<Navbar />
 					<Switch>
-						<Route exact path="/" component={Home} /> {/** Jose */}
-						<Route path="/contact" component={Contact} /> {/** Nizar */}
-						<Route path="/log-in" component={Login} /> {/** Marcel */}
-						<Route path="/edit-info" component={Edit} /> {/** Marcel */}
-						<Route path="/create-user" component={Create} /> {/** Nizar */}
-						<Route path="/food-tracker" component={Tracker} /> {/** Jose */}
+						<Route exact path="/" component={Home} />
+						<Route path="/contact" component={Contact} />
+						<Route path="/log-in" component={Login} />
+						<Route path="/edit-info" component={Edit} />
+						<Route path="/create-user" component={Create} />
+						<Route path="/food-tracker" component={Tracker} />
 					</Switch>
-					<Footer /> {/** Marcel */}
+					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

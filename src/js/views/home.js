@@ -161,6 +161,7 @@ export class Home extends React.Component {
 													type="number"
 													className="form-control qtyhome"
 													id="exampleSelect1"
+													min="1"
 													value={meal.quantity}
 													onChange={e =>
 														actions.updateItem(meal.food_name, {
@@ -182,14 +183,16 @@ export class Home extends React.Component {
 							<div className="container-fluid mt-3 mb-3">
 								<div className="row w-100 align-items-center">
 									<div className="col text-center">
-										<button
-											type="button"
-											className="btn btn-success"
-											onClick={() => {
-												actions.saveFoods(1, 2);
-											}}>
-											<Link to="/food-tracker">Save meal</Link>
-										</button>
+										<Link to="/food-tracker">
+											<button
+												type="button"
+												className="btn btn-success"
+												onClick={() => {
+													actions.saveFoods(1, 2);
+												}}>
+												Save meal
+											</button>
+										</Link>
 									</div>
 								</div>
 							</div>
