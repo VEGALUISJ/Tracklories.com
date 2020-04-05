@@ -1,5 +1,6 @@
 import React from "react";
 import { Context } from "../store/appContext";
+import { Doughnut } from "react-chartjs-2";
 import moment from "moment";
 import Datetime from "react-datetime";
 
@@ -31,6 +32,7 @@ export class Tracker extends React.Component {
 									</p>
 								</div>
 							</div>
+
 							<div className="container">
 								<div className="row">
 									<div className="col-4">

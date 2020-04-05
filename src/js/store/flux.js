@@ -1,4 +1,5 @@
 import moment from "moment";
+import axios from "axios";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -19,15 +20,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			register: (username, email, password) => {
-				fetch("https://3000-fb7489c6-be13-4c7b-9b8e-4f0d6667d31e.ws-us02.gitpod.io/adduser", {
+				console.log("Estoy aqui ahoras");
+				const options = {
 					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
+					url: "http://localhost:3000/register",
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+						"Access-Control-Allow-Origin": "http://localhost:8081/"
+					},
+					data: JSON.stringify({
 						username: username,
 						password: password,
 						email: email
 					})
-				});
+				};
+				console.log(options);
+				axios
+					.post("http://localhost:3000/register", {
+						username: username,
+						password: password,
+						email: email
+					})
+					.then(response => {
+						console.log(response);
+					})
+					.catch(error => {
+						console.log(error);
+					});
 			},
 			logout: () => {
 				//setStore({ token: null });

@@ -61,16 +61,15 @@ export class Create extends Component {
 										placeholder="Confirm Password"
 									/>
 								</div>
-								<Link to="/log-in">
-									<button
-										onClick={() =>
-											actions.register(this.state.username, this.state.email, this.state.password)
-										}
-										type="button"
-										className="btn btn-success mx-auto mb-4">
-										Create user
-									</button>
-								</Link>
+
+								<button
+									onClick={() =>
+										actions.register(this.state.username, this.state.email, this.state.password)
+									}
+									type="button"
+									className="btn btn-success mx-auto mb-4">
+									Create user
+								</button>
 							</div>
 						</div>
 					);
