@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			date: "",
 			foodtrackerCalories: [],
 			token: null,
+			errorMessage: null,
 			currentUser: null
 		},
 
@@ -53,22 +54,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				console.log("logout");
 			},
 			login: (user, pw) => {
-				fetch("https://3000-fb7489c6-be13-4c7b-9b8e-4f0d6667d31e.ws-us02.gitpod.io/login", {
+				fetch("http://localhost:3000/login", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
-						username: user,
+						email: user,
 						password: pw
 					})
 				})
 					.then(response => response.json())
 					.then(token => {
-						if (typeof token.msg != "undefined") {
-							// Notify.error(token.msg);
-						} else {
-							setStore({ token: token.jwt, currentUser: token.id });
-							// history.push("/dashboard");
-						}
+						setStore({ token: token.customToken });
+						console.log(getStore());
 					});
 			},
 
