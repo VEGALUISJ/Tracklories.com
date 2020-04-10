@@ -1,5 +1,6 @@
 import moment from "moment";
 import axios from "axios";
+import swal from "sweetalert";
 
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
@@ -62,9 +63,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 						password: pw
 					})
 				})
-					.then(response => response.json())
-					.then(token => {
-						setStore({ token: token.customToken });
+					//.then(res => res.json())
+					.then(async res => {
+						console.log(res);
+						let body = await res.json();
+						if (res.status === 500) {
+							console.log("Estoy en el error");
+							setStore({ errorMessage: body.message });
+						} else if (res.status === 200) {
+							setStore({ token: body.customToken });
+							swal("Good Job", "Log in succesful", "success");
+							setTimeout(() => {
+								window.location.href = "/";
+							}, 2000);
+						} else if (res.status === 404 || res.status === 401) {
+							setStore({ errorMessage: body.message });
+						}
 						console.log(getStore());
 					});
 			},
@@ -134,7 +148,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						setStore({
 							branded: data.branded.map(b => {
-								return { ...b, quantity: 1, total: b.nf_calories * b.serving_qty, date: moment() };
+								return {
+									...b,
+									quantity: 1,
+									total: b.nf_calories * b.serving_qty,
+									date: moment()
+								};
 							})
 						});
 						setStore({ common: data.common });
