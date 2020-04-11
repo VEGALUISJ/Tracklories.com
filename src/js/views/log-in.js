@@ -56,9 +56,6 @@ export class Login extends Component {
 									<div className="mt-3">
 										{store.errorMessage !== null ? (
 											<div className="alert alert-dismissible alert-danger">
-												<button type="button" className="close" data-dismiss="alert">
-													&times;
-												</button>
 												<strong>Oh snap!, {store.errorMessage}</strong>
 											</div>
 										) : null}

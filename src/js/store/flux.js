@@ -17,12 +17,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			foodtrackerCalories: [],
 			token: null,
 			errorMessage: null,
+			noErrorMessage: null,
 			currentUser: null
 		},
 
 		actions: {
 			register: (username, email, password) => {
-				console.log("Estoy aqui ahoras");
 				const options = {
 					method: "POST",
 					url: "http://localhost:3000/register",
@@ -36,18 +36,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 						email: email
 					})
 				};
-				console.log(options);
+				//console.log(options);
 				axios
 					.post("http://localhost:3000/register", {
 						username: username,
 						password: password,
 						email: email
 					})
-					.then(response => {
-						console.log(response);
+					.then(res => {
+						console.log(res.status);
+						if (res.status == 200) {
+							console.log("usuario creado con exito");
+							swal("Good Job", "User Created Succesfully", "success");
+							setTimeout(() => {
+								window.location.href = "/log-in";
+							}, 2000);
+						} else {
+							console.log("todo bien");
+						}
 					})
-					.catch(error => {
-						console.log(error);
+					.catch(err => {
+						console.log(err);
 					});
 			},
 			logout: () => {

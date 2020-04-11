@@ -37,13 +37,15 @@ export class Navbar extends React.Component {
 													</a>
 												</Link>
 											</li>
-											<li className="nav-item">
-												<Link to="/food-tracker">
-													<a className="nav-link text-dark" href="#">
-														Food Tracker
-													</a>
-												</Link>
-											</li>
+											{store.token != null ? (
+												<li className="nav-item">
+													<Link to="/food-tracker">
+														<a className="nav-link text-dark" href="#">
+															Food Tracker
+														</a>
+													</Link>
+												</li>
+											) : null}
 											<li className="nav-item">
 												<Link to="/contact">
 													<a className="nav-link text-dark" href="#">
