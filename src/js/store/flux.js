@@ -60,10 +60,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 			logout: () => {
-				//setStore({ token: null });
+				setStore({ token: null });
 				console.log("logout");
 			},
-			login: (user, pw) => {
+			login: (user, pw, login) => {
 				fetch("http://localhost:3000/login", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
@@ -83,7 +83,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 							setStore({ token: body.customToken });
 							swal("Good Job", "Log in succesful", "success");
 							setTimeout(() => {
-								window.location.href = "/";
+								login(true);
 							}, 2000);
 						} else if (res.status === 404 || res.status === 401) {
 							setStore({ errorMessage: body.message });

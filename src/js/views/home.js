@@ -197,20 +197,22 @@ export class Home extends React.Component {
 								</div>
 							</div>
 							{/*Boton de guardar meal*/}
-							<div className="alert alert-dismissible alert-warning">
-								<button type="button" className="close" data-dismiss="alert" />
-								<h4 className="alert-heading">Warning!</h4>
-								<p className="mb-0">
-									Join now to save your meal in your tracker profile up 5 days,
-									<br />
-									<a className="alert-link">
-										Sign In <br />
-									</a>
-									Or if you are already member <br />
-								</p>
+							{store.token === null ? (
+								<div className="alert alert-dismissible alert-warning">
+									<button type="button" className="close" data-dismiss="alert" />
+									<h4 className="alert-heading">Warning!</h4>
+									<p className="mb-0">
+										Join now to save your meal in your tracker profile up 5 days,
+										<br />
+										<a className="alert-link">
+											Sign In <br />
+										</a>
+										Or if you are already member <br />
+									</p>
 
-								<a className="alert-link">Log In</a>
-							</div>
+									<a className="alert-link">Log In</a>
+								</div>
+							) : null}
 							{/*Warning advice text*/}
 						</div>
 					);

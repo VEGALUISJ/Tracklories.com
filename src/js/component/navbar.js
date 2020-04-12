@@ -8,6 +8,7 @@ export class Navbar extends React.Component {
 		return (
 			<Context.Consumer>
 				{({ store, actions }) => {
+					console.log(store);
 					return (
 						<nav className="navbar containernavbar navbar-expand-lg navbar-dark bg-dark">
 							<div className="container w-80%">
@@ -60,7 +61,10 @@ export class Navbar extends React.Component {
 												{store.token != null ? (
 													<button type="button" className="btn btn-primary">
 														<Link to="/log-in">
-															<a className="dropdown-item text-light" href="#">
+															<a
+																className="dropdown-item text-light"
+																href="#"
+																onClick={() => actions.logout()}>
 																Log Out
 															</a>
 														</Link>
@@ -91,11 +95,6 @@ export class Navbar extends React.Component {
 																</a>
 															</Link>
 														)}
-														<Link to="/edit-info">
-															<a className="dropdown-item text-dark" href="#">
-																Edit Info
-															</a>
-														</Link>
 													</div>
 												</div>
 											</div>

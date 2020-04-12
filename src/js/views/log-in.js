@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
 
 export class Login extends Component {
 	constructor(props) {
@@ -13,7 +14,7 @@ export class Login extends Component {
 
 	login(e, actions) {
 		e.preventDefault();
-		actions.login(this.state.username, this.state.password);
+		actions.login(this.state.username, this.state.password, this.props.isLogin);
 	}
 
 	render() {
@@ -69,3 +70,7 @@ export class Login extends Component {
 		);
 	}
 }
+
+Login.propTypes = {
+	isLogin: PropTypes.func
+};
