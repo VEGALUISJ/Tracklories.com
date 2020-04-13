@@ -25,23 +25,27 @@ export class Home extends React.Component {
 					let testArray = store.chains.concat(store.test);
 					return (
 						<div>
-							<div className="jumbotron jumbotron-home mx-auto">
-								<h1>Tracklories everywhere</h1>
-								<h2 className="lead">
-									Start to take a look how many calories brings your food and track how much calories
-									you eat at the end of the day in each meal!!!
-								</h2>
-								<hr className="my-4" />
-								<p>Sign in to start a new healthy life</p>
-								<p className="lead">
-									<a className="btn btn-primary btn-lg" role="button">
-										Join in
-									</a>
-								</p>
-							</div>
+							{store.token === null ? (
+								<div className="jumbotron jumbotron-home mx-auto">
+									<h1>Tracklories everywhere</h1>
+									<h2 className="lead">
+										Start to take a look how many calories brings your food and track how much
+										calories you eat at the end of the day in each meal!!!
+									</h2>
+									<hr className="my-4" />
+									<p>Sign in to start a new healthy life</p>
+									<p className="lead">
+										<Link to="/create-user">
+											<a className="btn btn-primary btn-lg text-white" role="button">
+												Join in
+											</a>
+										</Link>
+									</p>
+								</div>
+							) : null}
 							{/*Jumbotron con texto inicial*/}
 							<div>
-								<h3 className="text-center">
+								<h3 className="text-center mt-4">
 									Start here to check how many calories you are next to eat in fast food
 								</h3>
 								<hr className="my-4" />
@@ -204,13 +208,16 @@ export class Home extends React.Component {
 									<p className="mb-0">
 										Join now to save your meal in your tracker profile up 5 days,
 										<br />
-										<a className="alert-link">
-											Sign In <br />
-										</a>
+										<Link to="/create-user">
+											<a className="alert-link text-black">
+												Sign In <br />
+											</a>
+										</Link>
 										Or if you are already member <br />
 									</p>
-
-									<a className="alert-link">Log In</a>
+									<Link to="/log-in">
+										<a className="alert-link text-black">Log In</a>
+									</Link>
 								</div>
 							) : null}
 							{/*Warning advice text*/}
