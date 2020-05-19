@@ -8,7 +8,7 @@ A fun and interactive web platform that provides the caloric information of the 
 ![demo](https://media.giphy.com/media/LrGIUZhtAJeqJELvmX/giphy.gif)
 
 ### Technologies used:
-- Javascript, React js, Bootstrap, CSS, APIs(Fetching and Buillding), Python, Flask.
+- Javascript, React js, Bootstrap, CSS, APIs(Fetching and Buillding), Node, Express and Firebase.
 
 ##### Cool Features:
 
