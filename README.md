@@ -1,7 +1,7 @@
 # Purpose
 
 
-A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating.
+A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating
 
 ![demo](https://media.giphy.com/media/QvpWE7ssp08SzgIBTJ/giphy.gif)
 
