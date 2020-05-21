@@ -3,9 +3,7 @@
 
 A fun and interactive web platform that provides the caloric information of the top five (5) fast food chains to raise awareness of unhealthy eating
 
-![demo](https://media.giphy.com/media/QvpWE7ssp08SzgIBTJ/giphy.gif)
-
-![demo](https://media.giphy.com/media/LrGIUZhtAJeqJELvmX/giphy.gif)
+![demo](https://gph.is/g/EBrPLRK)
 
 ### Technologies used:
 - Javascript, React js, Bootstrap, CSS, APIs(Fetching and Buillding), Node, Express and Firebase.
