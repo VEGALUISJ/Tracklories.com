@@ -14,6 +14,6 @@ Ability for the user to check-off calories.
 Display showing how many calories you consumed in determinated days.
 
 
-## Currently working on these additions :
+## Currently working on these additions:
 
 new minimalist fronted design that explain in dynamic way how work this application. 
